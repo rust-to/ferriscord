@@ -1,4 +1,4 @@
-# ferriscord
+# ferriscord 🦀
 A discord bot API for rust-lang. Created by the Toronto Rustaceans community.
 
 ## Usage

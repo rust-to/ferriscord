@@ -1,0 +1,67 @@
+[package]
+name = "ferriscord"
+version = "0.1.0"
+edition = "2018"
+authors = ["Connor Postma <connor.postma@gmail.com>"]
+description = "A rust library for accessing the Discord API"
+documentation = "https://github.com/rust-to/ferriscord"
+homepage = "https://github.com/rust-to/ferriscord"
+repository = "https://github.com/rust-to/ferriscord"
+readme = "README.md"
+keywords = ["ferris", "discord", "chat", "bot", "api"]
+categories = [
+  "api-bindings",
+  "network-programming",
+  "web-programming",
+  "asynchronous",
+  "text-processing"
+]
+license = "MIT/Apache-2.0"
+license-file = "LICENSE"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+# Debug logging
+env_logger = "0.6"
+# The most fun web and actor system framework
+actix = "0.8.1"
+actix-web = "1.0.0-beta.3"
+actix-rt = "0.2.2"
+# Serialization
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+# An adorable little crustacean that just want's to say hello
+ferris_says = "0.1.1"
+
+[badges]
+
+# Maintenance: `status` is required. Available options are `actively-developed`,
+# `passively-maintained`, `as-is`, `experimental`, `looking-for-maintainer`,
+# `deprecated`, and the default `none`, which displays no badge on crates.io.
+maintenance = { status = "experimental" }
+
+# Circle CI: `repository` is required. `branch` is optional; default is `master`
+#circle-ci = { repository = "...", branch = "master" }
+
+# Travis CI: `repository` in format "<user>/<project>" is required.
+# `branch` is optional; default is `master`
+#travis-ci = { repository = "...", branch = "master" }
+
+# Codecov: `repository` is required. `branch` is optional; default is `master`
+# `service` is optional; valid values are `github` (default), `bitbucket`, and
+# `gitlab`.
+#codecov = { repository = "...", branch = "master", service = "github" }
+
+# Coveralls: `repository` is required. `branch` is optional; default is `master`
+# `service` is optional; valid values are `github` (default) and `bitbucket`.
+#coveralls = { repository = "...", branch = "master", service = "github" }
+
+# Is it maintained resolution time: `repository` is required.
+#is-it-maintained-issue-resolution = { repository = "..." }
+
+# Is it maintained percentage of open issues: `repository` is required.
+#is-it-maintained-open-issues = { repository = "..." }
+

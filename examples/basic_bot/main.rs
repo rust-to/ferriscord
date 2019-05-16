@@ -1,10 +1,19 @@
 // Basic Discord bot using ferriscord
-use ferriscord::{Connection, Command, Event};
-use dotenv::dotenv;
+
+#![feature(async_await)]
+
+mod ferris;
+
+use ferriscord_derive;
+
+use ferriscord::{Connection, Context};
+
+//use dotenv::dotenv;
 
 fn main() {
     //check for a .env file
-    dotenv().ok();
+    //dotenv().ok();
+
     //get the bot api token from the environment
     let bot_token = std::env::var("FERRIS_BOT_TOKEN").expect("FERRIS_BOT_TOKEN must be set");
     // Initialize a new bot connection
@@ -20,25 +29,24 @@ fn main() {
     con.broadcast_message("hello world!");
 }
 
-#[derive(Command)]
+//#[derive(Command)]
 async fn say(ctx: Context) {
-    let mut buf = "";
     let to_say: &str = ctx.message;
-    ferris_says::say(to_say, to_say.len(), &mut buf).unwrap();
-    await!(ctx.send(buf));
+    ferris::say(to_say.as_bytes(), to_say.len()).unwrap();
+    await {ctx.send(buf) }await;
 }
 
-#[derive(Command)]
-async fn ping(ctx: discord_api::Context) {
-    await!(ctx.send("pong"));
+//#[derive(Command)]
+async fn ping(ctx: Context) {
+    ctx.send("pong").await();
 }
 
-#[derive(Event)]
-async fn on_ready(ctx: discord_api::Context) {
-    println!("Bot user {} is ready!",);
+//#[derive(Event)]
+async fn on_ready(ctx: Context) {
+    println!("Bot user {} is ready!");
 }
 
-#[derive(Event)]
-async fn on_message(ctx: discord_api::Context) {
-    await!(ctx.send("hi!"));
+//#[derive(Event)]
+async fn on_message(ctx: Context) {
+    ctx.send("hi!").await;
 }

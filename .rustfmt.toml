@@ -1,0 +1,8 @@
+# Repo consistant format configuration
+
+indent_style = "Visual" #default is Block
+control_brace_style = "AlwaysSameLine" #default
+fn_args_density = "Compressed" #default is Tall
+
+reorder_imports = true
+merge_imports = true

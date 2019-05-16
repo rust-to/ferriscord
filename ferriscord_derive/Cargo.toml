@@ -1,0 +1,14 @@
+[package]
+name = "ferriscord_derive"
+version = "0.1.0"
+authors = ["Connor Postma <connor.postma@gmail.com>"]
+edition = "2018"
+description = "Derive macro for ferriscord Discord API."
+documentation = "https://github.com/rust-to/ferriscord"
+homepage = "https://github.com/rust-to/ferriscord"
+repository = "https://github.com/rust-to/ferriscord"
+
+[lib]
+proc-macro = true
+
+[dependencies]

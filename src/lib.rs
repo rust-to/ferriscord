@@ -1,5 +1,8 @@
+#![feature(async_await)]
 
-pub use connection::Connection;
+mod connection;
+
+pub use connection::{Connection, Context};
 
 #[cfg(test)]
 mod tests {
@@ -8,5 +11,3 @@ mod tests {
         assert_eq!(2 + 2, 4);
     }
 }
-
-

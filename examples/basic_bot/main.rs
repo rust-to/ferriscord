@@ -10,6 +10,28 @@ use ferriscord::{Connection, Context};
 
 //use dotenv::dotenv;
 
+#[derive(DiscordBot)]//this derive will add all of the #[command] #[event] #[help] tagged functions automatically
+struct MyBot;
+
+impl MyBot {
+
+    #[command]
+    fn ping(ctx: Context<Command>) {
+
+    }
+
+    #[help]
+    fn help(ctx: Context<Help>) {
+
+    }
+
+    #[event]
+    fn on_message(ctx: Context<Event>) {
+
+    }
+
+}
+
 fn main() {
     //check for a .env file
     //dotenv().ok();
@@ -29,16 +51,20 @@ fn main() {
     con.broadcast_message("hello world!");
 }
 
+
+
+
+
 //#[derive(Command)]
 async fn say(ctx: Context) {
     let to_say: &str = ctx.message;
     ferris::say(to_say.as_bytes(), to_say.len()).unwrap();
-    await {ctx.send(buf) }await;
+    ctx.send(buf).await;
 }
 
 //#[derive(Command)]
 async fn ping(ctx: Context) {
-    ctx.send("pong").await();
+    ctx.send("pong").await;
 }
 
 //#[derive(Event)]
@@ -48,5 +74,5 @@ async fn on_ready(ctx: Context) {
 
 //#[derive(Event)]
 async fn on_message(ctx: Context) {
-    ctx.send("hi!").await;
+    async {ctx.send("hi!")}.await;
 }

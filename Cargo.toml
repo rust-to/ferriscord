@@ -19,6 +19,9 @@ categories = [
 #license = "MIT/Apache-2.0"
 license-file = "LICENSE"
 
+[dependencies.ferriscord_derive]
+path = "ferriscord_derive"
+
 [dependencies]
 # Debug logging
 env_logger = "0.6"
@@ -34,7 +37,6 @@ serde_json = "1.0"
 ferris-says = "0.1.1"
 
 [dev-dependencies]
-ferriscord_derive = { path = "ferriscord_derive"}
 smallvec = "0.6.9"
 
 [[example]]

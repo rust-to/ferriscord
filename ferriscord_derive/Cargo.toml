@@ -11,4 +11,3 @@ repository = "https://github.com/rust-to/ferriscord"
 [lib]
 proc-macro = true
 
-[dependencies]

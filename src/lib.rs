@@ -1,8 +1,11 @@
 #![feature(async_await)]
 
-mod connection;
+extern crate ferriscord_derive;
 
-pub use connection::{Connection, Context};
+mod connection;
+mod discord_datatypes;
+
+pub use connection::*;
 
 #[cfg(test)]
 mod tests {
